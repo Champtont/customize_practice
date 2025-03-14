@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxjl3enup67jy"]
+
+[ext_resource type="Script" path="res://Characters/main/characterScene/color_picker_button.gd" id="1_p7vs6"]
+[ext_resource type="PackedScene" uid="uid://b0ffo6idb3krl" path="res://Characters/main/characterScene/Player.tscn" id="2_eed1h"]
+
+[sub_resource type="Theme" id="Theme_o6t6s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rp3j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Customize_Character_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -459.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_o6t6s")
+color = Color(0, 0, 0, 1)
+
+[node name="Head Color" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 18.0
+offset_right = -17.0
+offset_bottom = 72.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Face"
+vertical_alignment = 1
+
+[node name="HeadColorPickerButton" type="ColorPickerButton" parent="ColorRect/Head Color"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 92.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.861557, 0.387545, 0.653685, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 18.0
+offset_right = 258.0
+offset_bottom = 353.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3rp3j")
+
+[node name="Player" parent="ColorRect/Label" instance=ExtResource("2_eed1h")]
+position = Vector2(114, 102)
+
+[connection signal="color_changed" from="ColorRect/Head Color/HeadColorPickerButton" to="ColorRect/Head Color/HeadColorPickerButton" method="_on_color_changed"]
+[connection signal="color_changed" from="ColorRect/Head Color/HeadColorPickerButton" to="ColorRect/Label/Player" method="_on_head_color_picker_button_color_changed"]

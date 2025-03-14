@@ -1,0 +1,171 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxjl3enup67jy"]
+
+[ext_resource type="Script" path="res://Characters/main/characterScene/color_picker_button.gd" id="1_p7vs6"]
+[ext_resource type="PackedScene" uid="uid://b0ffo6idb3krl" path="res://Characters/main/characterScene/Player.tscn" id="2_eed1h"]
+
+[sub_resource type="Theme" id="Theme_o6t6s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rp3j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Customize_Character_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -459.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_o6t6s")
+color = Color(0, 0, 0, 1)
+
+[node name="Head_Color" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 18.0
+offset_right = -17.0
+offset_bottom = 72.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Face"
+vertical_alignment = 1
+
+[node name="HeadColorPickerButton" type="ColorPickerButton" parent="ColorRect/Head_Color"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 105.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.81455, 0.387255, 0.199832, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Nose_Color" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 74.0
+offset_right = -17.0
+offset_bottom = 128.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Nose"
+vertical_alignment = 1
+
+[node name="NoseColorPickerButton" type="ColorPickerButton" parent="ColorRect/Nose_Color"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.81455, 0.387255, 0.199832, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Body_Color" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 137.0
+offset_right = -17.0
+offset_bottom = 191.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Body"
+vertical_alignment = 1
+
+[node name="BodyColorPickerButton" type="ColorPickerButton" parent="ColorRect/Body_Color"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.302843, 0.519936, 0.889381, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Arm_Color" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 197.0
+offset_right = -17.0
+offset_bottom = 251.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Arms"
+vertical_alignment = 1
+
+[node name="ArmColorPickerButton" type="ColorPickerButton" parent="ColorRect/Arm_Color"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.0125858, 0.599202, 0.651515, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Leg_Color" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 254.0
+offset_right = -17.0
+offset_bottom = 308.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Legs"
+vertical_alignment = 1
+
+[node name="LegColorPickerButton" type="ColorPickerButton" parent="ColorRect/Leg_Color"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.731435, 0.602013, 0.494352, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 18.0
+offset_right = 258.0
+offset_bottom = 353.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3rp3j")
+
+[node name="Player" parent="ColorRect/Label" instance=ExtResource("2_eed1h")]
+position = Vector2(114, 102)
+
+[connection signal="color_changed" from="ColorRect/Head_Color/HeadColorPickerButton" to="ColorRect/Head_Color/HeadColorPickerButton" method="_on_head_color_changed"]
+[connection signal="color_changed" from="ColorRect/Nose_Color/NoseColorPickerButton" to="ColorRect/Nose_Color/NoseColorPickerButton" method="_on_nose_color_changed"]
+[connection signal="color_changed" from="ColorRect/Body_Color/BodyColorPickerButton" to="ColorRect/Body_Color/BodyColorPickerButton" method="_on_body_color_changed"]
+[connection signal="color_changed" from="ColorRect/Arm_Color/ArmColorPickerButton" to="ColorRect/Arm_Color/ArmColorPickerButton" method="_on_arm_color_changed"]
+[connection signal="color_changed" from="ColorRect/Leg_Color/LegColorPickerButton" to="ColorRect/Leg_Color/LegColorPickerButton" method="_on_leg_color_changed"]
