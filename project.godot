@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="animationAttempt"
+run/main_scene="res://game/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
-Cornelia="*res://Characters/main/characterScene/cornelia.gd"
-GlobalColorPickerButton="*res://Characters/main/characterScene/color_picker_button.gd"
+GlobalColorPickerButton="*res://Characters/main/characterScene/game/color_picker_button.gd"

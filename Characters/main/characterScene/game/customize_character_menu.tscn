@@ -1,0 +1,193 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxjl3enup67jy"]
+
+[ext_resource type="Script" path="res://Characters/main/characterScene/game/color_picker_button.gd" id="1_p7vs6"]
+[ext_resource type="PackedScene" uid="uid://b0ffo6idb3krl" path="res://Characters/main/characterScene/corneliaScene_and_scripts/Player.tscn" id="2_eed1h"]
+
+[sub_resource type="Theme" id="Theme_o6t6s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rp3j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Customize_Character_menu" type="CanvasLayer"]
+process_mode = 3
+layer = -11
+
+[node name="Menu_Background_Color" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="control_fields" type="Control" parent="Menu_Background_Color"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = 101.0
+offset_right = -143.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_o6t6s")
+
+[node name="Head_Color" type="Label" parent="Menu_Background_Color/control_fields"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 18.0
+offset_right = -17.0
+offset_bottom = 72.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Face"
+vertical_alignment = 1
+
+[node name="HeadColorPickerButton" type="ColorPickerButton" parent="Menu_Background_Color/control_fields/Head_Color"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 105.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.81455, 0.387255, 0.199832, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Eye_Color" type="Label" parent="Menu_Background_Color/control_fields"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 66.0
+offset_right = -17.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Eyes"
+vertical_alignment = 1
+
+[node name="EyeColorPickerButton" type="ColorPickerButton" parent="Menu_Background_Color/control_fields/Eye_Color"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.224424, 0.0807336, 0.0194709, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Nose_Color" type="Label" parent="Menu_Background_Color/control_fields"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 114.0
+offset_right = -17.0
+offset_bottom = 168.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Nose"
+vertical_alignment = 1
+
+[node name="NoseColorPickerButton" type="ColorPickerButton" parent="Menu_Background_Color/control_fields/Nose_Color"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.81455, 0.387255, 0.199832, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Body_Color" type="Label" parent="Menu_Background_Color/control_fields"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 162.0
+offset_right = -17.0
+offset_bottom = 216.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Body"
+vertical_alignment = 1
+
+[node name="BodyColorPickerButton" type="ColorPickerButton" parent="Menu_Background_Color/control_fields/Body_Color"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.302843, 0.519936, 0.889381, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Arm_Color" type="Label" parent="Menu_Background_Color/control_fields"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 210.0
+offset_right = -17.0
+offset_bottom = 264.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Arms"
+vertical_alignment = 1
+
+[node name="ArmColorPickerButton" type="ColorPickerButton" parent="Menu_Background_Color/control_fields/Arm_Color"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.0125858, 0.599202, 0.651515, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Leg_Color" type="Label" parent="Menu_Background_Color/control_fields"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 258.0
+offset_right = -17.0
+offset_bottom = 312.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 38
+text = "Legs"
+vertical_alignment = 1
+
+[node name="LegColorPickerButton" type="ColorPickerButton" parent="Menu_Background_Color/control_fields/Leg_Color"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 2.0
+offset_right = 379.0
+offset_bottom = 51.0
+color = Color(0.731435, 0.602013, 0.494352, 1)
+script = ExtResource("1_p7vs6")
+
+[node name="Label" type="Label" parent="Menu_Background_Color/control_fields"]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 13.0
+offset_right = 652.0
+offset_bottom = 348.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3rp3j")
+
+[node name="Player" parent="Menu_Background_Color/control_fields/Label" instance=ExtResource("2_eed1h")]
+position = Vector2(114, 102)

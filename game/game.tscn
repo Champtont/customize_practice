@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://butos1y2c77hb"]
+
+[ext_resource type="Script" path="res://game/game.gd" id="1_auyuu"]
+[ext_resource type="PackedScene" uid="uid://b0ffo6idb3krl" path="res://Characters/main/characterScene/corneliaScene_and_scripts/Player.tscn" id="1_lfda7"]
+[ext_resource type="PackedScene" uid="uid://dxjl3enup67jy" path="res://Characters/main/characterScene/game/customize_character_menu.tscn" id="2_kfcto"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_auyuu")
+
+[node name="Player" parent="." instance=ExtResource("1_lfda7")]
+z_index = -15
+position = Vector2(575, 323)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Customize_Character_menu" parent="." instance=ExtResource("2_kfcto")]
+unique_name_in_owner = true
+layer = 0
+visible = false
